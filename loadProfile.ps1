@@ -3,9 +3,9 @@
 $path = Split-Path -parent "$Profile"
 If(!(test-path "$Profile"))
 {
-    New-Item -Path $profile -ItemType "file" -Force
+    $Source = "https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/Microsoft.PowerShell_profile.ps1"
+    $WebClient = New-Object System.Net.WebClient
+    $WebClient.DownloadFile("$Profile", $Source)
 }
-#Download the powershell profile
-cmd /c copy "$Profile" (New-Object System.Net.WebClient).DownloadString("https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/Microsoft.PowerShell_profile.ps1")
 #Reload the profile into the current session
 .$Profile
