@@ -5,14 +5,5 @@ To use these functions, copy them into your powershell profile or use the comman
 The script below will not overwrite any commands in your profile if it already exists.
 
 ```powershell
-#If the powershell profile path is not created, create it
-$path = Split-Path -parent "$Profile"
-If(!(test-path "$Profile"))
-{
-    New-Item -Path $profile -ItemType "file" -Force
-}
-#Download the powershell profile
-cmd /c copy "$Profile" https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/Microsoft.PowerShell_profile.ps1
-#Reload the profile into the current session
-.$Profile
+powershell (New-Object System.Net.WebClient).DownloadString("https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/loadProfile.ps1");
 ```
