@@ -27,3 +27,10 @@ Function psp {
     # Return True if pings to all machines succeed:
     END {return $status}
 }
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+function Unzip
+{
+    param([string]$zipfile, [string]$outpath)
+
+    [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)
+}
