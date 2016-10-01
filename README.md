@@ -13,4 +13,6 @@ If(!(test-path "$Profile"))
 }
 #Download the powershell profile
 cmd /c copy "$Profile" https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/Microsoft.PowerShell_profile.ps1
+#Reload the profile into the current session
+.$Profile
 ```
