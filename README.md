@@ -11,5 +11,6 @@ If(!(test-path "$Profile"))
 {
     New-Item -Path $profile -ItemType "file" -Force
 }
+#Download the powershell profile
 cmd /c copy "$Profile" https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/Microsoft.PowerShell_profile.ps1
 ```
