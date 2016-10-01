@@ -1,6 +1,5 @@
 #This script loads the powershell profile from github for a one liner in the console
 #If the powershell profile path is not created, create it
-$path = Split-Path -parent "$Profile"
 If(!(test-path "$Profile"))
 {
     $path = Split-Path -Path "$Profile"
