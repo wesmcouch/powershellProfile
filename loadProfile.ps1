@@ -4,8 +4,8 @@ If(!(test-path "$Profile"))
 {
     $path1 = Split-Path -Path "$Profile"
     New-Item -ItemType Directory -Force -Path $path1
-    $Source = "https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/Microsoft.PowerShell_profile.ps1"
-    Invoke-WebRequest -Uri $Source -OutFile "$Profile"
+    $urlAddress = "https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/Microsoft.PowerShell_profile.ps1"
+    Invoke-WebRequest -Uri $urlAddress -OutFile "$Profile"
 }
 #Reload the profile into the current session
 .$Profile
