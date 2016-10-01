@@ -3,7 +3,8 @@
 $path = Split-Path -parent "$Profile"
 If(!(test-path "$Profile"))
 {
-    New-Item -ItemType Directory -Force -Path Split-Path -Path "$Profile"
+    $path = Split-Path -Path "$Profile"
+    New-Item -ItemType Directory -Force -Path $path
     $Source = "https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/Microsoft.PowerShell_profile.ps1"
     Invoke-WebRequest -Uri $Source -OutFile "$Profile"
 }
