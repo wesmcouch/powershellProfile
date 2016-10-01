@@ -7,8 +7,9 @@ The script below will not overwrite any commands in your profile if it already e
 ```powershell
 #If the powershell profile path is not created, create it
 $path = Split-Path -parent "$Profile"
-If(!(test-path "$path"))
+If(!(test-path "$Profile"))
 {
-    New-Item -ItemType Directory $path
+    New-Item -Path $profile -ItemType "file" -Force
 }
+cmd /c copy "$Profile" https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/Microsoft.PowerShell_profile.ps1
 ```
