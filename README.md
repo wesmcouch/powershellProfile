@@ -5,5 +5,5 @@ To use these functions, copy them into your powershell profile or use the comman
 The script below will not overwrite any commands in your profile if it already exists.
 
 ```powershell
-powershell (New-Object System.Net.WebClient).DownloadString("https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/loadProfile.ps1");
+powershell (Invoke-WebRequest "https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/loadProfile.ps1")
 ```
