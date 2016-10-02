@@ -3,9 +3,10 @@
 If(!(test-path "$Profile"))
 {
     $path1 = Split-Path -Path "$Profile"
+    $ProfilePath = "$Profile"
     New-Item -ItemType Directory -Force -Path $path1
     $WebClient2 = New-Object System.Net.WebClient
-    $WebClient2.DownloadFile('https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/Microsoft.PowerShell_profile.ps1','"$Profile"')
+    $WebClient2.DownloadFile('https://raw.githubusercontent.com/wesmcouch/powershellProfile/master/Microsoft.PowerShell_profile.ps1', $ProfilePath)
 }
 #Reload the profile into the current session
 .$Profile
